@@ -52,12 +52,33 @@ namespace Menu
                             }
                         }
                         break;
-                    
+                    //Suma rápida de productos
                     case "2":
-                        clases.clsOpcion2 opcion2 = new clases.clsOpcion2();
-                        opcion2.SumaProductos();
-                        break;
+                        Console.Clear();
+                        Console.WriteLine("Has ingresado a la opción Suma rápida de productos, presiona espacio para comenzar la búsqueda");
+                        Console.ReadKey();
 
+                        Console.WriteLine("\n" + "¿Cuántos productos desea llevar?");
+                        string numero = Console.ReadLine();
+                        int subtotal = 0;
+
+                        for (int i = 0; i < int.Parse(numero); i++)
+                        {
+                            Console.WriteLine("Ingrese el nombre del producto");
+                            string productossuma = Console.ReadLine();
+
+                            for (int p = 0; p < productos.Length; p++)
+                            {
+                                if (productos[p].Equals(productossuma))
+                                {
+                                    Console.WriteLine("El producto es: " + productos[p] + " tiene una valor de: " + precios[p]);
+                                    subtotal += precios[p];
+                                }
+                            }
+                        }
+                        Console.WriteLine("El precio total es: " + subtotal);
+                        acumulador += subtotal;
+                        break;
                     case "3":
                         clases.clsOpcion3 opcion3 = new clases.clsOpcion3();
                         opcion3.PagarCuenta();
