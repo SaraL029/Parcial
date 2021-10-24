@@ -30,9 +30,27 @@ namespace Menu
 
                 switch (opcion)
                 {
+                    // Buscar producto
                     case "1":
-                        clases.clsOpcion1 opcion1 = new clases.clsOpcion1();
-                        opcion1.BuscarProducto();
+                        Console.Clear();
+                        Console.WriteLine("Has ingresado a la opción Buscar productos, presiona espacio para comenzar la búsqueda");
+                        Console.ReadKey();
+                        Console.WriteLine("\n" + "¿Cuántos productos desea buscar?");
+                        string cantidad = Console.ReadLine();
+                     
+                        for (int i = 0; i < int.Parse(cantidad); i++)
+                        {
+                            Console.WriteLine("Ingrese el nombre del producto");
+                            string productossuma = Console.ReadLine();
+
+                            for (int k = 0; k < productos.Length; k++)
+                            {
+                                if (productos[k].Equals(productossuma))
+                                {
+                                    Console.WriteLine("El producto es: " + productos[k] + " tiene una valor de: " + precios[k]);
+                                }
+                            }
+                        }
                         break;
                     
                     case "2":
