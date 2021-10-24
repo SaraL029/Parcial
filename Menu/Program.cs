@@ -14,7 +14,7 @@ namespace Menu
             
             string opcion = "0";
             
-            // Menu
+            // Menu, este expone el nombre de nuestra tienda (LePanite Desayunos) y todas las opciones de usuario del programa 
  
             Console.WriteLine("Bienvenido a la tienda de barrio: LePanite Desayunos");
             Console.WriteLine("Los productos disponibles son los siguientes:\n");
@@ -43,7 +43,7 @@ namespace Menu
 
                 switch (opcion)
                 {
-                    // Buscar producto
+                    // Buscar producto, este permite buscar un producto por su nombre (segun la disponibilidad de la tienda) y decirle al usuario su valor
                     case "1":
                         Console.Clear();
                         Console.WriteLine("Has ingresado a la opción Buscar productos, presiona espacio para comenzar la búsqueda");
@@ -66,7 +66,8 @@ namespace Menu
                         }
                         break;
                         
-                    //Suma rápida de productos
+                    //Suma rápida de productos, este calcula la suma de los producto que el usuario está comprando en LePanite
+
                     case "2":
                         Console.Clear();
                         Console.WriteLine("Has ingresado a la opción Suma rápida de productos, presiona espacio para comenzar la búsqueda");
@@ -94,7 +95,7 @@ namespace Menu
                         acumulador += subtotal;
                         break;
                         
-                    //Pagar la cuenta
+                    //Pagar la cuenta, este totaliza la cuenta del usuario, calcula el cambio necesario y ofrece la opcion de fiar
                     case "3":
                         Console.Clear();
                         Console.WriteLine("Has ingresado a la opción Pagar cuenta, presiona espacio para iniciar");
@@ -120,34 +121,20 @@ namespace Menu
                         }
                         Console.WriteLine("Ahora su deuda es: " + fiona);
                         break;
-                    case "4":
-                        clases.clsOpcion4 opcion4 = new clases.clsOpcion4();
-                        opcion4.ConsultarCuentaCliente();
-                        break;
-                    case "5":
-                        clases.clsOpcion5 opcion5 = new clases.clsOpcion5();
-                        opcion5.ActualizarCuentaCliente();
-                        break;
-                    case "6":
-                        clases.clsOpcion6 opcion6 = new clases.clsOpcion6();
-                        opcion6.InformeVentas();
-                        break;
-                    case "7":
-                        clases.clsOpcion7 opcion7 = new clases.clsOpcion7();
-                        opcion7.CarteraClientes();
-                        break;
+                       
+                     // Consultar cuenta cliente, este imprime el saldo actual del usuario, sea en deuda, saldo a favor o paz y salvo
+                         case "4":
                         
-                     // Consultar cuenta cliente
+                     // Actualizar cuenta cliente, este actualiza el saldo de un cliente
+                         case "5":
                         
-                     // Actualizar cuenta cliente
+                     // Calcular informe de ventas, este imprime las compras durante la ejecución del programa y totaliza su valor
+                         case "6":
                         
-                     // Calcular informe de ventas
+                     // Calcular cartera de clientes y cuentas por pagar, este imprime el total de los saldos adeudados por los usuarios
+                         case "7":
                         
-                     // Calcular cartera de clientes
-                        
-                     // Cuentas por pagar 
-                        
-                    //Créditos o acerca de 
+                    //Acerca de, este contiene los creditos e integrantes de la entrega
                     case "8":
                         Console.Clear();
                         Console.WriteLine("Has ingresado a la opción de Acerca de, presiona espacio para iniciar");
@@ -160,7 +147,7 @@ namespace Menu
                         "\n" + "Universidad Pontificia Bolivariana" + "\n" + "2021");
                         break;
                         
-                    //Salir
+                    //Salir, este le permite al usuario abandonar el proyecto
                     case "9":
                         Console.Clear();
                         Console.WriteLine("Has escogido la opción de Salir, presiona espacio para ejecutar");
