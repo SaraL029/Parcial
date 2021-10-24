@@ -79,9 +79,31 @@ namespace Menu
                         Console.WriteLine("El precio total es: " + subtotal);
                         acumulador += subtotal;
                         break;
+                    //Pagar la cuenta
                     case "3":
-                        clases.clsOpcion3 opcion3 = new clases.clsOpcion3();
-                        opcion3.PagarCuenta();
+                        Console.Clear();
+                        Console.WriteLine("Has ingresado a la opción Pagar cuenta, presiona espacio para iniciar");
+                        Console.ReadKey();
+                        Console.WriteLine("\n"+ "El precio a pagar es de " + acumulador);
+                        Console.WriteLine("¿Cómo desea pagar?" + "\n" + "1: Pagar" + "\n" + "2: Fiar");
+                        string pago = Console.ReadLine();
+                        
+                        if (int.Parse(pago)== 1)
+                        {
+                            Console.WriteLine("Escogió la opción de pagar");
+                            Console.WriteLine("¿Cón cuánto dinero va a pagar?");
+                            string plata = Console.ReadLine();
+                            int devuelta = int.Parse(plata) - acumulador;
+
+                            Console.WriteLine("Su devuelta es de: " + devuelta);
+                        }
+
+                        if (int.Parse(pago)==2)
+                        {
+                            Console.WriteLine("Escogió la opción de fiar");
+                            fiona += acumulador;
+                        }
+                        Console.WriteLine("Ahora su deuda es: " + fiona);
                         break;
                     case "4":
                         clases.clsOpcion4 opcion4 = new clases.clsOpcion4();
