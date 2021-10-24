@@ -6,7 +6,12 @@ namespace Menu
     {
         static void Main(string[] args)
         {
-  
+            string[] productos = { "chocolate", "pan tajado", "leche entera", "azucar", "cafe", "cereal", "mix de frutas"};
+            int[] precios = { 3200, 2000, 3200, 6000, 1700, 8300, 4400, 3000, 5000 };;
+            string verdadero;
+            int acumulador = 0;
+            int fiona = 0;
+            
             string opcion = "0";
 
             Console.WriteLine("Bienvenido a la tienda de barrio: LePanite Desayunos");
