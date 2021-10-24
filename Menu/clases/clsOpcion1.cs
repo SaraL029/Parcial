@@ -11,8 +11,7 @@ namespace Menu.clases
             Console.Clear();
             Console.WriteLine("Has ingresado a la opción Buscar producto");
             Console.ReadKey();
-            Console.WriteLine("Bienvenido a la tienda de barrio: LePanite Desayunos");
-
+           
                 string[] productos = { "chocolate", "pan tajado", "leche entera", "waffles", "azucar", "cafe", "cereal", "arepas", "mix de frutas" };
                 float[] precios = { 3200, 2000, 3200, 6000, 1700, 8300, 4400, 3000, 5000 };
                 string datos;
