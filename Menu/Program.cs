@@ -132,6 +132,7 @@ namespace Menu
                         clases.clsOpcion7 opcion7 = new clases.clsOpcion7();
                         opcion7.CarteraClientes();
                         break;
+                    //Créditos
                     case "8":
                         Console.Clear();
                         Console.WriteLine("Has ingresado a la opción de Acerca de, presiona espacio para iniciar");
@@ -143,6 +144,7 @@ namespace Menu
                         "\n" + "Para la clase de Fundamentos de Programación con el profesor Andrés Bedoya Tobón los martes y jueves a las 10am" + "\n" +
                         "\n" + "Universidad Pontificia Bolivariana" + "\n" + "2021");
                         break;
+                    //Salir
                     case "9":
                         Console.Clear();
                         Console.WriteLine("Has escogido la opción de Salir, presiona espacio para ejecutar");
