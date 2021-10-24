@@ -153,9 +153,9 @@ namespace Menu
                         Console.WriteLine("Has ingresado a la opción de Acerca de, presiona espacio para iniciar");
                         Console.ReadKey();
                         Console.WriteLine("\n" + "Proyecto creado por:" + "\n" +
+                        "\n" + "Sara Londoño Orrego " + " ID: 000437687" + "\n" +                                          
                         "\n" + "AnaMaría Díaz Rocha " + " ID: 000436459" +
                         "\n" + "Sebastián Bello Garcia" + " ID: 000385812" +
-                        "\n" + "Sara Londoño Orrego " + " ID: 000437687" + "\n" +
                         "\n" + "Para la clase de Fundamentos de Programación con el profesor Andrés Bedoya Tobón en el horario de martes y jueves a las 10am" + "\n" +
                         "\n" + "Universidad Pontificia Bolivariana" + "\n" + "2021");
                         break;
