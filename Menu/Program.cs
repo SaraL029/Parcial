@@ -13,7 +13,9 @@ namespace Menu
             int fiona = 0;
             
             string opcion = "0";
-
+            
+            // Menu
+ 
             Console.WriteLine("Bienvenido a la tienda de barrio: LePanite Desayunos");
             Console.WriteLine("Los productos disponibles son los siguientes:\n");
 
@@ -63,6 +65,7 @@ namespace Menu
                             }
                         }
                         break;
+                        
                     //Suma rápida de productos
                     case "2":
                         Console.Clear();
@@ -90,6 +93,7 @@ namespace Menu
                         Console.WriteLine("El precio total es: " + subtotal);
                         acumulador += subtotal;
                         break;
+                        
                     //Pagar la cuenta
                     case "3":
                         Console.Clear();
@@ -132,7 +136,18 @@ namespace Menu
                         clases.clsOpcion7 opcion7 = new clases.clsOpcion7();
                         opcion7.CarteraClientes();
                         break;
-                    //Créditos
+                        
+                     // Consultar cuenta cliente
+                        
+                     // Actualizar cuenta cliente
+                        
+                     // Calcular informe de ventas
+                        
+                     // Calcular cartera de clientes
+                        
+                     // Cuentas por pagar 
+                        
+                    //Créditos o acerca de 
                     case "8":
                         Console.Clear();
                         Console.WriteLine("Has ingresado a la opción de Acerca de, presiona espacio para iniciar");
@@ -141,9 +156,10 @@ namespace Menu
                         "\n" + "AnaMaría Díaz Rocha " + " ID: 000436459" +
                         "\n" + "Sebastián Bello Garcia" + " ID: 000385812" +
                         "\n" + "Sara Londoño Orrego " + " ID: 000437687" + "\n" +
-                        "\n" + "Para la clase de Fundamentos de Programación con el profesor Andrés Bedoya Tobón los martes y jueves a las 10am" + "\n" +
+                        "\n" + "Para la clase de Fundamentos de Programación con el profesor Andrés Bedoya Tobón en el horario de martes y jueves a las 10am" + "\n" +
                         "\n" + "Universidad Pontificia Bolivariana" + "\n" + "2021");
                         break;
+                        
                     //Salir
                     case "9":
                         Console.Clear();
