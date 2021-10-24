@@ -144,8 +144,12 @@ namespace Menu
                         "\n" + "Universidad Pontificia Bolivariana" + "\n" + "2021");
                         break;
                     case "9":
-                        clases.clsOpcion9 opcion9 = new clases.clsOpcion9();
-                        opcion9.Salir();
+                        Console.Clear();
+                        Console.WriteLine("Has escogido la opción de Salir, presiona espacio para ejecutar");
+                        Console.WriteLine("\n" + "Gracias por visitarnos :D");
+                        Console.ReadKey();
+
+                        Environment.Exit(1);
                         break;
                     default:
                         Console.WriteLine("No has escogido una opción válida :(");
