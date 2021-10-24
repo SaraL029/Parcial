@@ -10,6 +10,12 @@ namespace Menu
             string opcion = "0";
 
             Console.WriteLine("Bienvenido a la tienda de barrio: LePanite Desayunos");
+            Console.WriteLine("Los productos disponibles son los siguientes:\n");
+
+            for (int i = 0; i < productos.Length; i++)
+            {
+                Console.Write(productos[i] + "\n");
+            }
             do
             {
                 Console.WriteLine("\n" + "Este es nuestro menú de opciones");
