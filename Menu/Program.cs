@@ -1,23 +1,23 @@
-﻿using System;
+using System;
 
-namespace Menu
-{
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+       public static void Main(string[] args)
         {
-            string[] productos = { "chocolate", "pan tajado", "leche entera", "azucar", "cafe", "cereal", "mix de frutas"};
-            int[] precios = { 3200, 2000, 3200, 6000, 1700, 8300, 4400, 3000, 5000 };;
+            string[] productos = { "chocolate", "pan tajado", "leche entera", "azucar", "cafe", "cereal", "mix de frutas" };
+            int[] precios = { 3200, 2000, 3200, 6000, 1700, 8300, 4400, 3000, 5000 }; ;
             int[] usuario = { 001, 002, 003 };
-            int[] estado de cuenta = { 0, 0, 0 };
+            int[] estado_de_cuenta = { 0, 0, 0 };
+		    int contador = 0; 
+		    int[] historial = new int[0];
             string verdadero;
             int acumulador = 0;
             int fiona = 0;
-            
+
             string opcion = "0";
-            
+
             // Menu, este expone el nombre de nuestra tienda (LePanite Desayunos) y todas las opciones de usuario del programa 
- 
+
             Console.WriteLine("Bienvenido a la tienda de barrio: LePanite Desayunos");
             Console.WriteLine("Los productos disponibles son los siguientes:\n");
 
@@ -40,7 +40,7 @@ namespace Menu
                     "\n 9. Salir");
 
                 Console.WriteLine("\n Por favor digite el número de la opción que desea");
-                
+
                 opcion = Console.ReadLine();
 
                 switch (opcion)
@@ -49,10 +49,9 @@ namespace Menu
                     case "1":
                         Console.Clear();
                         Console.WriteLine("Has ingresado a la opción Buscar productos, presiona espacio para comenzar la búsqueda");
-                        Console.ReadKey();
                         Console.WriteLine("\n" + "¿Cuántos productos desea buscar?");
                         string cantidad = Console.ReadLine();
-                     
+
                         for (int i = 0; i < int.Parse(cantidad); i++)
                         {
                             Console.WriteLine("Ingrese el nombre del producto");
@@ -67,13 +66,14 @@ namespace Menu
                             }
                         }
                         break;
-                        
+
                     //Suma rápida de productos, este calcula la suma de los producto que el usuario está comprando en LePanite
 
                     case "2":
+						contador ++;
+						Array.Resize<int>(ref historial, contador);
                         Console.Clear();
                         Console.WriteLine("Has ingresado a la opción Suma rápida de productos, presiona espacio para comenzar la búsqueda");
-                        Console.ReadKey();
 
                         Console.WriteLine("\n" + "¿Cuántos productos comprará el día de hoy?");
                         string numero = Console.ReadLine();
@@ -95,18 +95,18 @@ namespace Menu
                         }
                         Console.WriteLine("El precio total es: " + subtotal);
                         acumulador += subtotal;
+						historial[contador - 1] = subtotal;
                         break;
-                        
+
                     //Pagar la cuenta, este totaliza la cuenta del usuario, calcula el cambio necesario y ofrece la opcion de fiar
                     case "3":
                         Console.Clear();
                         Console.WriteLine("Has ingresado a la opción Pagar cuenta, presiona espacio para iniciar");
-                        Console.ReadKey();
-                        Console.WriteLine("\n"+ "El precio a pagar es de " + acumulador);
+                        Console.WriteLine("\n" + "El precio a pagar es de " + acumulador);
                         Console.WriteLine("¿Cómo desea pagar?" + "\n" + "1: Pagar" + "\n" + "2: Fiar");
                         string pago = Console.ReadLine();
-                        
-                        if (int.Parse(pago)== 1)
+
+                        if (int.Parse(pago) == 1)
                         {
                             Console.WriteLine("Escogió la opción de pagar");
                             Console.WriteLine("¿Cón cuánto dinero va a pagar?");
@@ -116,58 +116,79 @@ namespace Menu
                             Console.WriteLine("Su devuelta es de: " + devuelta);
                         }
 
-                        if (int.Parse(pago)==2)
+                        if (int.Parse(pago) == 2)
                         {
                             Console.WriteLine("Escogió la opción de fiar");
                             fiona += acumulador;
                         }
                         Console.WriteLine("Ahora su deuda es: " + fiona);
                         break;
-                       
-                     // Consultar cuenta cliente, este imprime el saldo actual del usuario, sea en deuda, saldo a favor o paz y salvo
-                         case "4":
-                        Console.WriteLine ("¿Cual es tu ID?");
-                        string cliente = Console.ReadLine
-                           
-                            for (int a = 0; a < usuario.Length; a ++)
-                                {
-                                if (usuario[a]== int.Parse(cliente))
-                                    {
-                                    Console.WriteLine("La Cuenta: " + usuario[i] + " tiene un saldo de " + estado de cuenta[i]);
-                                    }
-                                }
-                              
-                            
-                          break;
-                        
-                     // Actualizar cuenta cliente, este actualiza el saldo de un cliente
-                         case "5":
-                        
-                     // Calcular informe de ventas, este imprime las compras durante la ejecución del programa y totaliza su valor
-                         case "6":
-                        
-                     // Calcular cartera de clientes y cuentas por pagar, este imprime el total de los saldos adeudados por los usuarios
-                         case "7":
-                        
+
+                    // Consultar cuenta cliente, este imprime el saldo actual del usuario, sea en deuda, saldo a favor o paz y salvo
+                    case "4":
+                        Console.WriteLine("¿Cual es tu ID?");
+                        string cliente = Console.ReadLine();
+
+
+                            for (int a = 0; a < usuario.Length; a++)
+                        {
+                            if (usuario[a] == int.Parse(cliente))
+                            {
+                                Console.WriteLine("La Cuenta: " + usuario[a] + " tiene un saldo de " + estado_de_cuenta[a]);
+								if (estado_de_cuenta[a]<0) 
+									{
+									Console.WriteLine("Estas en deuda con LePanite");
+									}
+								
+								if (estado_de_cuenta[a]==0) 
+									{
+									Console.WriteLine("Estas en paz y salvo");
+									}
+								
+								if (estado_de_cuenta[a]>0) 
+									{
+									Console.WriteLine("Tienes saldo a favor :)");
+									}
+                            }
+						
+                        }
+
+
+                        break;
+
+                    // Actualizar cuenta cliente, este actualiza el saldo de un cliente
+                    case "5":
+
+                    // Calcular informe de ventas, este imprime las compras durante la ejecución del programa y totaliza su valor
+                    case "6":
+						Console.WriteLine("Su historial de compras es el siguiente:");
+						for(int b=0; b<historial.Length;b++) 
+							{
+							Console.WriteLine("La compra numero: " + (b + 1) + " Tuvo un valor de: " + historial[b]);
+							 }
+						Console.WriteLine("Y el total es de: " + acumulador);
+					break;
+
+                    // Calcular cartera de clientes y cuentas por pagar, este imprime el total de los saldos adeudados por los usuarios
+                    case "7":
+
                     //Acerca de, este contiene los creditos e integrantes de la entrega
                     case "8":
                         Console.Clear();
                         Console.WriteLine("Has ingresado a la opción de Acerca de, presiona espacio para iniciar");
-                        Console.ReadKey();
                         Console.WriteLine("\n" + "Proyecto creado por:" + "\n" +
-                        "\n" + "Sara Londoño Orrego " + " ID: 000437687" + "\n" +                                          
+                        "\n" + "Sara Londoño Orrego " + " ID: 000437687" + "\n" +
                         "\n" + "AnaMaría Díaz Rocha " + " ID: 000436459" +
                         "\n" + "Sebastián Bello Garcia" + " ID: 000385812" +
                         "\n" + "Para la clase de Fundamentos de Programación con el profesor Andrés Bedoya Tobón en el horario de martes y jueves a las 10am" + "\n" +
                         "\n" + "Universidad Pontificia Bolivariana" + "\n" + "2021");
                         break;
-                        
+
                     //Salir, este le permite al usuario abandonar el proyecto
                     case "9":
                         Console.Clear();
                         Console.WriteLine("Has escogido la opción de Salir, presiona espacio para ejecutar");
                         Console.WriteLine("\n" + "Gracias por visitarnos :D");
-                        Console.ReadKey();
 
                         Environment.Exit(1);
                         break;
@@ -175,11 +196,9 @@ namespace Menu
                         Console.WriteLine("No has escogido una opción válida :(");
                         break;
                 }
-                Console.ReadKey();
 
-            }while (opcion != "0");
+            } while (opcion != "0");
 
-            
+
         }
     }
-}
