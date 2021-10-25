@@ -8,6 +8,8 @@ namespace Menu
         {
             string[] productos = { "chocolate", "pan tajado", "leche entera", "azucar", "cafe", "cereal", "mix de frutas"};
             int[] precios = { 3200, 2000, 3200, 6000, 1700, 8300, 4400, 3000, 5000 };;
+            int[] usuario = { 001, 002, 003 };
+            int[] estado de cuenta = { 0, 0, 0 };
             string verdadero;
             int acumulador = 0;
             int fiona = 0;
@@ -73,7 +75,7 @@ namespace Menu
                         Console.WriteLine("Has ingresado a la opción Suma rápida de productos, presiona espacio para comenzar la búsqueda");
                         Console.ReadKey();
 
-                        Console.WriteLine("\n" + "¿Cuántos productos desea llevar?");
+                        Console.WriteLine("\n" + "¿Cuántos productos comprará el día de hoy?");
                         string numero = Console.ReadLine();
                         int subtotal = 0;
 
@@ -124,6 +126,19 @@ namespace Menu
                        
                      // Consultar cuenta cliente, este imprime el saldo actual del usuario, sea en deuda, saldo a favor o paz y salvo
                          case "4":
+                        Console.WriteLine ("¿Cual es tu ID?");
+                        string cliente = Console.ReadLine
+                           
+                            for (int a = 0; a < usuario.Length; a ++)
+                                {
+                                if (usuario[a]== int.Parse(cliente))
+                                    {
+                                    Console.WriteLine("La Cuenta: " + usuario[i] + " tiene un saldo de " + estado de cuenta[i]);
+                                    }
+                                }
+                              
+                            
+                          break;
                         
                      // Actualizar cuenta cliente, este actualiza el saldo de un cliente
                          case "5":
