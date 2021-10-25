@@ -126,7 +126,7 @@ using System;
 
                     // Consultar cuenta cliente, este imprime el saldo actual del usuario, sea en deuda, saldo a favor o paz y salvo
                     case "4":
-                        Console.WriteLine("¿Cual es tu ID?");
+                        Console.WriteLine("Por favor, digita tu usuario ");
                         string cliente = Console.ReadLine();
 
 
@@ -137,17 +137,17 @@ using System;
                                 Console.WriteLine("La Cuenta: " + usuario[a] + " tiene un saldo de " + estado_de_cuenta[a]);
 								if (estado_de_cuenta[a]<0) 
 									{
-									Console.WriteLine("Estas en deuda con LePanite");
+									Console.WriteLine("Te informamos que estas en deuda con LePanite Desayunos");
 									}
 								
 								if (estado_de_cuenta[a]==0) 
 									{
-									Console.WriteLine("Estas en paz y salvo");
+									Console.WriteLine("¡En buena hora! Estas a paz y salvo con LePanite");
 									}
 								
 								if (estado_de_cuenta[a]>0) 
 									{
-									Console.WriteLine("Tienes saldo a favor :)");
+									Console.WriteLine("¡Te esperamo pronto! Tienes saldo a favor con la tienda");
 									}
                             }
 						
